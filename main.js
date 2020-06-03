@@ -10,7 +10,7 @@ async function downloadImage() {
     let excelFile = await wb.xlsx.readFile('data.xlsx');
     let ws = excelFile.getWorksheet('data');
     let data = ws.getSheetValues();
-
+    console.log('procesando...')
     data.forEach(item => {
         if (item[3].hyperlink) {
             /*** DESCARGAR DE IMAGENES ***/
@@ -32,5 +32,5 @@ async function downloadImage() {
                 })
                 .catch((err) => console.log(err))
         }
-    });    
+    });      
 }
